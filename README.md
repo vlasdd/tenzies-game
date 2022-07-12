@@ -26,4 +26,4 @@ Complete
 
 ## Usage
 
-To Visit This App: `https://vlased.github.io/tenzies-game/`
+To Visit This App: **https://vlased.github.io/tenzies-game/**

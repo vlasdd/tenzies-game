@@ -1,10 +1,10 @@
 import React from "react";
 import Die from "./Die";
-import {nanoid} from "nanoid"
-import {useWindowSize} from '@react-hook/window-size'
+import { nanoid } from "nanoid"
+import { useWindowSize } from '@react-hook/window-size'
 import Confetti from 'react-confetti'
 
-export default function App(){
+export default function App() {
     const [firstDate, setFirstDate] = React.useState(Math.ceil(new Date().getTime() / 1000));
     const [takenTime, setTakenTime] = React.useState(null);
     const [dice, setDice] = React.useState(allNewDice());
@@ -15,15 +15,15 @@ export default function App(){
 
     React.useEffect(() => {
         let firstValue = dice[0].value;
-        for(let i = 0; i < dice.length; i++){
-            if(!dice[i].isHeld || dice[i].value != firstValue){
+        for (let i = 0; i < dice.length; i++) {
+            if (!dice[i].isHeld || dice[i].value != firstValue) {
                 break;
             }
 
-            if(i == 9){
+            if (i == 9) {
                 setTenzies(true);
                 setTakenTime(Math.ceil(new Date().getTime() / 1000) - firstDate);
-                if(!parseInt(localStorage.getItem("record"), 10) || parseInt(localStorage.getItem("record"), 10) > amountOfRolls){
+                if (!parseInt(localStorage.getItem("record"), 10) || parseInt(localStorage.getItem("record"), 10) > amountOfRolls) {
                     localStorage.setItem("record", JSON.stringify(amountOfRolls))
                     setRecord(parseInt(localStorage.getItem("record")), 10)
                 }
@@ -35,7 +35,7 @@ export default function App(){
         const newDice = []
         for (let i = 0; i < 10; i++) {
             newDice.push({
-                value: Math.ceil(Math.random() * 6), 
+                value: Math.ceil(Math.random() * 6),
                 isHeld: false,
                 id: nanoid()
             })
@@ -49,14 +49,14 @@ export default function App(){
         }))
     }
 
-    function createNewNumbers(){
+    function createNewNumbers() {
         if (!tenzies) {
             setDice(prevDice => prevDice.map(elem => {
                 return elem.isHeld ? { ...elem } : { ...elem, value: Math.ceil(Math.random() * 6) }
             }))
             setAmountOfRolls(prevAmount => prevAmount + 1)
-        }  
-        else{
+        }
+        else {
             setTenzies(false)
             setDice(allNewDice())
             setAmountOfRolls(0)
@@ -66,9 +66,9 @@ export default function App(){
     }
 
     const dies = dice.map(elem => {
-        return <Die 
-            value={elem.value} 
-            isHeld={elem.isHeld} 
+        return <Die
+            value={elem.value}
+            isHeld={elem.isHeld}
             key={elem.id}
             isHeldToggle={() => isHeldToggle(elem.id)}
         />
@@ -83,8 +83,8 @@ export default function App(){
             <main className="col-11 col-sm-9 col-md-8 col-lg-7">
                 <div className="information">
                     <h1 className="title">Tenzies</h1>
-                    <p className="instructions">Roll until all dice are the same. 
-                    Click each die to freeze it at its current value between rolls.</p>
+                    <p className="instructions">Roll until all dice are the same.
+                        Click each die to freeze it at its current value between rolls.</p>
                     {takenTime && <p className="instructions">This game has taken {takenTime} seconds</p>}
                 </div>
                 <div className="dies--container">

@@ -1,19 +1,19 @@
 import React from "react";
 import Dot from "./Dot";
-import {nanoid} from "nanoid";
+import { nanoid } from "nanoid";
 
-export default function Die(props){
+export default function Die(props) {
     const dots = [];
-    for(let i = 0; i < props.value; i++){
+    for (let i = 0; i < props.value; i++) {
         dots.push(
-            <Dot 
+            <Dot
                 key={nanoid()}
             />
         )
     }
 
-    return(
-        <div 
+    return (
+        <div
             className={`die--component ${props.isHeld && "die--component--held"}`}
             onClick={props.isHeldToggle}
         >

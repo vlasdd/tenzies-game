@@ -75,27 +75,27 @@ export default function App() {
     })
 
     return (
-        <div className="wrapper">
+        <>
             {tenzies && <Confetti
                 width={width}
                 height={height}
             />}
-            <main className="col-11 col-sm-9 col-md-8 col-lg-7">
+            <main className="main col-11 col-sm-9 col-md-8 col-lg-7">
                 <div className="information">
-                    <h1 className="title">Tenzies</h1>
+                    <h1 className="information__title">Tenzies</h1>
                     <p className="instructions">Roll until all dice are the same.
                         Click each die to freeze it at its current value between rolls.</p>
                     {takenTime && <p className="instructions">This game has taken {takenTime} seconds</p>}
                 </div>
-                <div className="dies--container">
+                <div className="dies-container">
                     {dies}
                 </div>
-                <div className="add--info">
-                    <h1 className="instructions">Rolls: {amountOfRolls}</h1>
-                    <h1 className="instructions">Your record: {record}</h1>
+                <div className="add-info">
+                    <h1 className="instructions instructions_gray">Rolls: {amountOfRolls}</h1>
+                    <h1 className="instructions instructions_gray">Your record: {record}</h1>
                 </div>
-                <button className="roll--button" onClick={createNewNumbers}>{tenzies ? "New game" : "Roll"}</button>
+                <button className="roll-button" onClick={createNewNumbers}>{tenzies ? "New game" : "Roll"}</button>
             </main>
-        </div>
+        </>
     )
 }

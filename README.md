@@ -7,7 +7,7 @@ This project is a simple tenzies game, It is built with **React.js** and **SASS*
 ### Main
 
 + React.js
-+ SASS
++ SCSS
 
 ### Secondary
 

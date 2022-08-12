@@ -1,6 +1,6 @@
 # Tenzies Game
 
-This project is a simple tenzies game, It is built with **React.js** and **SASS**
+This project is a simple tenzies game, It is built with **React.js** and **SCSS**
 
 ## Technologies used
 

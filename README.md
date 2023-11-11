@@ -7,22 +7,7 @@ This project is a simple tenzies game, It is built with **React.js** and **SCSS*
 ### Main
 
 + React.js
-+ SCSS
-
-### Secondary
-
-+ React Confetti
-
-## Main Features
-
-+ Randomizes the amount of dots everytime the roll button is clicked.
-+ Tracks the time it takes to finish a game.
-+ Shows your record.
-+ Good-looking design(each dice contains dots in the correct order, like the real dices do).  
-
-## Project Status
-
-Complete
++ SCSS 
 
 ## Usage
 
